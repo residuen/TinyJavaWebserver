@@ -20,7 +20,7 @@ public class TestServer extends JavaWebserver {
 		System.out.println("Ausgabe->"+anfrageText);
 		
 		// Antwort an den Client schicken
-		sendeAntwortAnClient("<html><body>"+anfrageText+"</body></html>");	// HTML-Seite in einer Einzelkette
+		clientAntwort("<html><body>"+anfrageText+"</body></html>");	// HTML-Seite in einer Einzelkette
 	}
 
 	/**
@@ -34,5 +34,4 @@ public class TestServer extends JavaWebserver {
 		
 		server.start();
 	}
-
 }

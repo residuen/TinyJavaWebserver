@@ -77,7 +77,7 @@ public abstract class JavaWebserver extends Thread {
 	 * http://192.168.56.1/client?message=Der%20Java-Webserver requestText
 	 * enthält dann den Text "client?message=Der%20Java-Webserver"
 	 * 
-	 * @param requestText
+	 * @param anfrageText
 	 */
 	abstract void anfrageErgebnis(String anfrageText);
 
@@ -279,7 +279,7 @@ public abstract class JavaWebserver extends Thread {
 		header = header + "Content-Type: text/html\r\n";
 		header = header + "\r\n"; // Ende des HTTP-Headers und beginn des Bodys
 
-		// Header zurückgeben
+		// Header-String zurückgeben
 		return header;
 	}
 
@@ -287,7 +287,7 @@ public abstract class JavaWebserver extends Thread {
 	 * Der Inhalt des Übergebenen Strings wird an den Client geliefert
 	 * @param text
 	 */
-	public void sendeAntwortAnClient(final String text) {
+	private void sendeAntwortAnClient(final String text) {
 		
 		try {
 
@@ -300,8 +300,8 @@ public abstract class JavaWebserver extends Thread {
 			if (KONSOLEN_MSG)
 				System.out.println("Nachricht an Client:\n"
 						+ text.replaceAll(";", "\n") + "\n");
-			// clean up the files, close open handles
-			output.close();
+
+			output.close(); // output-Stream schließen
 		}
 
 		catch (Exception e) {
