@@ -167,8 +167,7 @@ public abstract class JavaWebserver extends Thread {
 
 		int methode = 0; // 1 get, 2 head, 0 nicht unterstützt
 
-		String path = new String(); // dient dem Zusammensetzen des
-									// Client-Anfragetextes (HTTP, Pfad)
+		String path = new String(); // dient dem Zusammensetzen des Client-Anfragetextes (HTTP, Pfad)
 
 		try {
 			String tmp = null;
@@ -236,8 +235,7 @@ public abstract class JavaWebserver extends Thread {
 
 		// Client-Anfrage ausgeben
 		if (KONSOLEN_MSG)
-			System.out.println("Client Anfrage: requestText="
-					+ clientAnfrageText + "\n");
+			System.out.println("Client Anfrage: requestText=" + clientAnfrageText + "\n");
 	}
 
 	/**
